@@ -1,0 +1,8 @@
+handeye:
+  # T_base_camera: P_base = R * P_camera + t
+  # 请用 alicia_d_calibration/easy_handeye 或实测标定结果替换下面默认值。
+  base_frame: "base_link"
+  camera_frame: "camera_color_optical_frame"
+  translation_xyz: [0.0, 0.0, 0.0]
+  rotation_xyzw: [0.0, 0.0, 0.0, 1.0]
+  publish_static_tf: true

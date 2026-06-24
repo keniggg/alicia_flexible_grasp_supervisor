@@ -1,0 +1,14 @@
+<launch>
+  <arg name="start_real_arm" default="false" />
+  <arg name="driver_port" default="/dev/ttyACM1" />
+  <arg name="driver_baudrate" default="1000000" />
+
+  <group if="$(arg start_real_arm)">
+    <include file="$(find alicia_d_driver)/launch/alicia_d_bringup.launch">
+      <arg name="port" value="$(arg driver_port)"/>
+      <arg name="baudrate" value="$(arg driver_baudrate)"/>
+    </include>
+  </group>
+
+  <node pkg="alicia_flexible_grasp_supervisor" type="motion_gateway_node.py" name="motion_gateway" output="screen" />
+</launch>

@@ -1,0 +1,24 @@
+camera:
+  enabled: true
+  simulate: false
+  use_realsense: true
+  width: 640
+  height: 480
+  fps: 30
+  color_topic: "/supervisor/camera/color/image_raw"
+  depth_topic: "/supervisor/camera/depth/image_raw"
+  camera_info_topic: "/supervisor/camera/color/camera_info"
+  align_depth_to_color: true
+  frame_id: "camera_color_optical_frame"
+
+perception:
+  enabled: true
+  # simple_hsv / manual / none。第一版建议 simple_hsv 或 manual。
+  detector: "simple_hsv"
+  hsv_lower: [35, 40, 40]
+  hsv_upper: [85, 255, 255]
+  min_area: 300
+  object_label: "target"
+  output_pose_camera_topic: "/perception/object_pose_camera"
+  output_pose_base_topic: "/perception/object_pose_base"
+  output_object_topic: "/perception/object"

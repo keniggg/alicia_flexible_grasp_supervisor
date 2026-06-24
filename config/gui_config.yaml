@@ -1,0 +1,7 @@
+gui:
+  window_title: "Alicia-D 柔顺抓取上位机 v2"
+  camera_topic: "/supervisor/camera/color/image_raw"
+  tactile_topic: "/tactile/state"
+  joint_state_topic: "/joint_states"
+  grasp_state_topic: "/grasp/state"
+  refresh_ms: 50
